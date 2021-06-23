@@ -13,7 +13,7 @@ public class MainPanel extends JPanel implements ActionListener {
     private final String name;
     private final MainFrame frame; // インスタンス変数でMainFrameの参照を保持
     
-    public MainPanel(MainFrame frame, String name){
+    public MainPanel(MainFrame frame, String name) {
         this.name = name;
         this.frame = frame;
         this.setName(this.name);

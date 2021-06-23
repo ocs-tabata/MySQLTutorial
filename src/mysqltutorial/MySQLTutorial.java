@@ -5,6 +5,7 @@ import mysqltutorial.gui.MainFrame;
 
 public class MySQLTutorial {
     private static MySQLTutorial instance;
+    private static final MySQL mysql = new MySQL();
     
     public MySQLTutorial() {
         // Initialization of variables
@@ -12,18 +13,14 @@ public class MySQLTutorial {
     }
     
     public static void main(String[] args) {
-        MySQL mysql = new MySQL();
-        
         // MySQL接続
         mysql.connect();
         
         // GUI起動
-	new MainFrame();
+        MainFrame frame = new MainFrame();
     }
     
     public static void exit() {
-        MySQL mysql = new MySQL();
-        
         // MySQL切断
         mysql.disconnect();
         
@@ -31,6 +28,10 @@ public class MySQLTutorial {
 	System.exit(0);
     }
     
+    /**
+     * Get the current instance of this class.
+     * @return instance
+     */
     public static MySQLTutorial getInstance() {
         return instance;
     }

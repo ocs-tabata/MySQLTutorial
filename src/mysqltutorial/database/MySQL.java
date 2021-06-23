@@ -21,6 +21,7 @@ public class MySQL extends Database {
             try {
                 // JDBCドライバのロード - JDBC4.0（JDK1.6）以降は不要
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
+                
                 // MySQLに接続
                 connection = DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.port + "/" + this.database + "?serverTimezone=JST", this.username, this.password);
                 

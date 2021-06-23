@@ -7,9 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MainFrame extends JFrame {
-    private static final long serialVersionUID = -5367664874441444718L;
     public String[] PanelNames = { "Main" };
-    JPanel main = new MainPanel(this, PanelNames[0]);
+    public JPanel main = new MainPanel(this, PanelNames[0]);
     public JPanel[] jps = { main };
     private final CardLayout layout = new CardLayout();
     
@@ -23,8 +22,10 @@ public class MainFrame extends JFrame {
         // CardLayoutを使用。
         Container contentPane = this.getContentPane();
         JPanel mainPanel = new JPanel();
+        
         mainPanel.setLayout(layout);
-        for (JPanel panel : jps){
+        
+        for (JPanel panel : jps) {
             mainPanel.add(panel, panel.getName());
         }
         
